@@ -12,7 +12,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Load the image using a relative path
 image_path = "C:/Users/Public/Image Coding/Image Coding.webp"
-img_contact_from = Image.open(image_path)
+img_contact_from = Image.open("C:/Users/Public/Image Coding/Image Coding.webp")
 
 # GREETINGS AND ABOUT ME
 with st.container():
