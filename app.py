@@ -2,6 +2,8 @@ from PIL import Image
 import streamlit as st
 import os
 
+image_path = os.path.abspath("C:/Users/Public/Image Coding/Image Coding.webp")
+
 # Set page configuration
 st.set_page_config(page_title="Richelle", page_icon=":heart:", layout="wide")
 
