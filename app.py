@@ -2,6 +2,7 @@ from PIL import Image
 import streamlit as st
 import os
 
+# Convert relative path to absolute path
 image_path = os.path.abspath("C:/Users/Public/Image Coding/Image Coding.webp")
 
 # Set page configuration
@@ -12,9 +13,10 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Specify the relative path to the image file
 image_path = os.path.join(current_dir, "Image Coding", "Image Coding.webp")
+image_path = "C:/Users/Public/Image Coding/Image Coding.webp"
+img_contact_from = Image.open(image_path)
 
 # Load the image using a relative path
-image_path = os.path.join(current_dir, "Image Coding.webp")
 img_contact_from = Image.open(image_path)
 
 # GREETINGS AND ABOUT ME
@@ -103,4 +105,22 @@ with st.container():
             """
         )
         st.markdown("[Read the Article...](https://codegym.cc/groups/posts/672-why-do-people-love-coding-explaining-the-passion-for-profession)")
-        
+
+with st.container():
+    st.write("---")
+    st.header("Get in touch with me!")
+    st.write("If you have any questions or issues, feel free to get in touch with me!")
+    
+    # Form for user feedback
+    name = st.text_input("Your Name:")
+    email = st.text_input("Your Email:")
+    message = st.text_area("Your Message:")
+    
+    # Submit button
+    if st.button("Submit Feedback"):
+        # Handle the form submission
+        handle_feedback(name, email, message)
+        st.success("Thank you for your feedback! We'll get back to you soon.")
+
+# Display on your Streamlit app
+st.write("Submittance Appreciated!")
